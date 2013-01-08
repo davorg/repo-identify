@@ -1,0 +1,15 @@
+use Test::More;
+
+use Repo::Identify;
+
+while (<DATA>) {
+  chomp;
+  my ($repo, $expected) = split;
+  is(identify_repo($repo), $expected);
+}
+
+done_testing;
+
+__END__
+git@github.com:davorg/xml-feed.git github
+https://github.com/PadreIDE/Padre.git github
